@@ -1,0 +1,25 @@
+import React from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import MenuSection from "./MenuSection";
+import ReviewSection from "./ReviewSection";
+function RestroTabs({restaurant})
+{
+    return (
+        <Tabs defaultValue="category" className="w-full">
+  <TabsList>
+    <TabsTrigger value="category">Category</TabsTrigger>
+    <TabsTrigger value="about">About</TabsTrigger>
+    <TabsTrigger value="reviews">reviews</TabsTrigger>
+  </TabsList>
+  <TabsContent value="category">
+    <MenuSection restaurant={restaurant}></MenuSection>
+  </TabsContent>
+  <TabsContent value="about">About</TabsContent>
+  <TabsContent value="reviews">
+  <ReviewSection restaurant={restaurant}/>
+  </TabsContent>
+</Tabs>
+
+    )
+}
+export default RestroTabs;
